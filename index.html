@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Passer</title>
+  <link rel="stylesheet" href="./css/main.min.css">
+</head>
+
+<body>
+  <div class="box">
+    <div class="item"><img src="img/imagem01.jpeg" alt=""></div>
+    <div class="item"><img src="img/imagem02.jpeg" alt=""></div>
+    <div class="item"><img src="img/imagem03.jpeg" alt=""></div>
+    <div class="item"><img src="img/imagem04.jpeg" alt=""></div>
+    <div class="item"><img src="img/imagem05.jpeg" alt=""></div>
+    <div class="item"><img src="img/imagem06.jpeg" alt=""></div>
+    <div class="item"><img src="img/imagem07.jpeg" alt=""></div>
+  </div>
+  <div class="btns">
+    <button class="prev js-prev"></button>
+    <button class="next js-next"></button>
+  </div>
+
+  <script>
+    let prev = document.querySelector('.js-prev')
+    let next = document.querySelector('.js-next')
+
+    next.addEventListener('click', () => {
+      let items = document.querySelectorAll('.item')
+      document.querySelector('.box').appendChild(items[0])
+    })
+
+    prev.addEventListener('click', () => {
+      let items = document.querySelectorAll('.item')
+      document.querySelector('.box').prepend(items[items.length - 1])
+    })
+  </script>
+</body>
+
+</html>
